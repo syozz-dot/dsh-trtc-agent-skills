@@ -20,6 +20,12 @@ if [[ -z "$REF" ]]; then
 fi
 REF="${REF:-$FALLBACK_REF}"
 
+# Skip download if assets already populated (e.g. local dev after first sync)
+if [[ -z "${FORCE_SYNC:-}" && -d "$DEST/skills/trtc/SKILL.md" ]]; then
+  echo "dsh-trtc-agent-skills: assets/trtc already present, skipping sync (set FORCE_SYNC=1 to override)"
+  exit 0
+fi
+
 echo "dsh-trtc-agent-skills: syncing content from Tencent-RTC/agent-skills@${REF}"
 
 TMP="$(mktemp -d)"
