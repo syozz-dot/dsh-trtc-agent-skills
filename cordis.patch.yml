@@ -1,0 +1,8 @@
+- insert:
+    - id: trtc-agent-skills
+      name: 'dsh-trtc-agent-skills'
+    - id: trtc-hooks
+      name: 'dsh-hooks-claude-code'
+      config:
+        configPath: './node_modules/dsh-trtc-agent-skills/assets/trtc/hooks/hooks.json'
+        pluginRoot: './node_modules/dsh-trtc-agent-skills/assets/trtc'

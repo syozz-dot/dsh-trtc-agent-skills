@@ -1,0 +1,50 @@
+{
+  "name": "dsh-trtc-agent-skills",
+  "version": "0.1.0",
+  "description": "DSH skill bundle: TRTC agent skills (RTC, IM, Conference, Call, Push, AI services) synced verbatim from Tencent-RTC/agent-skills at a pinned release tag. Install to add TRTC skills to DeepSeek Harness.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "assets/trtc"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tencent-RTC/dsh-trtc-agent-skills.git"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "plugin",
+    "skill",
+    "trtc",
+    "tencent-rtc",
+    "rtc",
+    "im",
+    "conference",
+    "voice-ai"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "scripts": {
+    "sync:deps": "bash scripts/sync-deps.sh",
+    "prepack": "bash scripts/sync-deps.sh"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-skill": "^0.1.0-rc.7",
+    "@deepseek-ai/cordis": "^4.0.1"
+  },
+  "devDependencies": {
+    "@deepseek-ai/dsh-skill": "^0.1.0-rc.7"
+  }
+}
